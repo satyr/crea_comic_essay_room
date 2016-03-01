@@ -8,6 +8,6 @@ ancs = root.cssselect("#contents .layout-news .section-date a")
 data = []
 
 for a in ancs:
-  data.append({"title": a.text_content(), "link": a.get("href")})
+  data.append({"link": a.get("href"), "title": a.text_content()})
 
-scraperwiki.sqlite.save(unique_keys=["name"], data=data)
+scraperwiki.sqlite.save(unique_keys=["link"], data=data)
